@@ -3,6 +3,9 @@
 
 :root {
     --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
 }
 
 * {
@@ -186,6 +189,49 @@ img {
     transform: scale(0.99);
 }
 
+/* Backgrounds & colored buttons*/
+.bg-primary, .btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.bg-secondary, .btn-secondary{
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.bg-dark, .btn-dark{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.bg-light, .btn-light{
+    background-color: var(--light-color);
+    color: #fff;
+}
+
+/* Test sizes */
+.lead {
+    font-size: 20px;
+}
+
+.sm {
+    font-size: 1rem;
+}
+
+.md {
+    font-size: 2rem;
+}
+
+.lg {
+    font-size: 3rem;
+}
+
+.xl {
+    font-size: 4rem;
+}
+
+
 .flex {
     display: flex;
     justify-content: center;
@@ -251,4 +297,20 @@ img {
 .stats .grid p{
     font-size: 20px;
     font-weight: bold;
+}
+
+/* Cli */
+.cli .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: repeat(2,1fr);
+}
+/*img cilkam*/
+.cli .grid > *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* Cloud */
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
 }
