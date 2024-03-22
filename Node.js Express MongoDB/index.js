@@ -30,16 +30,25 @@ const path = require("path");
 
 // da probamo express ... 
 const app = express(); // calls express function to start new Express app
+
+// za static stvari kot so slike, črke, css ... 
+app.use(express.static("public"));
+
 app.listen(3000,()=> {
     console.log("App listening on port 3000");
 })
 
 app.get('/about',(req,res)=>{
-    res.json({
-    name: 'Greg Lim'
-    })
+    // res.json({
+    // name: 'Greg Lim'
+    // })
+    res.sendFile(path.resolve(__dirname,"about.html"));
 })
 
 app.get("/",(req,res)=>{
     res.sendFile(path.resolve(__dirname,"index.html"));
+})
+
+app.get("/contact",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"contact.html"))
 })
