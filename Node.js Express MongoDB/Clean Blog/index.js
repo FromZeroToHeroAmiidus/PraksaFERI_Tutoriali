@@ -12,6 +12,10 @@ app.set('view engine','ejs')
 //app.set('views', path.join(__dirname, 'views'))
 // ^ tega ni v knigi
 
+// za MongoDB
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database');
+
 app.use(express.static("public"));
 
 //app.use(express.static(__dirname + '/views/'));
@@ -62,4 +66,7 @@ app.get('/post',(req,res)=>{
     })
 
 
- 
+app.get('/posts/new',(req,res)=>{
+    //res.sendFile(path.resolve(__dirname,'pages/post.html'))
+    res.render('create')
+    })
