@@ -9,3 +9,4 @@ import { PrismaModule } from './prisma/prisma.module';
   imports: [AuthModule, UserModule, BookmarkModule, PrismaModule],
 })
 export class AppModule {}
+// https://github.com/vladwulf/nestjs-api-tutorial/tree/main
